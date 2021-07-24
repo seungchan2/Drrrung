@@ -31,6 +31,8 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     
     // MARK: - Functions
     
+    //사운드 초기 세팅
+    
     private func initializePlayer() {
         guard let soundAsset: NSDataAsset = NSDataAsset(name: "sound") else {
             return
