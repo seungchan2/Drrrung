@@ -26,12 +26,9 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initializePlayer()
-        
     }
     
     // MARK: - Functions
-    
-    //사운드 초기 세팅
     
     private func initializePlayer() {
         guard let soundAsset: NSDataAsset = NSDataAsset(name: "sound") else {
