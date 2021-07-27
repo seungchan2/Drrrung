@@ -60,8 +60,8 @@
 		EC6E0B6626AF000E00E4668F /* BoostCourse_week2 */ = {
 			isa = PBXGroup;
 			children = (
-				EC6E0B7C26AF00F300E4668F /* Source */,
 				EC6E0B7B26AF00ED00E4668F /* Resource */,
+				EC6E0B7C26AF00F300E4668F /* Source */,
 			);
 			path = BoostCourse_week2;
 			sourceTree = "<group>";
@@ -328,7 +328,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RQHZUCMHSH;
-				INFOPLIST_FILE = BoostCourse_week2/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/BoostCourse_week2/Resource/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -347,7 +347,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RQHZUCMHSH;
-				INFOPLIST_FILE = BoostCourse_week2/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/BoostCourse_week2/Resource/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
