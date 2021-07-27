@@ -2,28 +2,46 @@
 //  SignUpFirstViewController.swift
 //  BoostCourse_week2
 //
-//  Created by 김승찬 on 2021/07/26.
+//  Created by 김승찬 on 2021/07/28.
 //
 
 import UIKit
+import Foundation
 
-class SignUpFirstViewController: UIViewController {
+class SignUpFirstViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    @IBOutlet weak var personImageView: UIImageView!
+    
+    lazy var imagePicker: UIImagePickerController = {
+        let picker: UIImagePickerController = UIImagePickerController()
+        picker.sourceType = .photoLibrary
+        picker.delegate = self
+        return picker
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        pickImage()
 
-        // Do any additional setup after loading the view.
+      
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func pickImage() {
+        self.present(self.imagePicker, animated: true)
     }
-    */
-
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    private func imagePickerController(_ picker: UIImagePickerController,didFinishPickingMediaWithInfo info: [String: Any]) {
+        
+        if let originalImage: UIImage = info[UIImagePickerController.InfoKey.originalImage.rawValue] as? UIImage {
+            self.personImageView.image = originalImage
+        }
+        
+        self.dismiss(animated: true, completion: nil)
+        
+    }
 }
+
