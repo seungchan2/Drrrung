@@ -16,9 +16,11 @@ class ViewController: UIViewController {
     
     @IBAction func touchNextButton(_ sender: Any) {
         
-        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "SignUpFistViewContoller") as? SignUpFirstViewController else { return }
-        
-        self.navigationController?.pushViewController(nextVC, animated: true)
+        let signupFirstStoryboard = UIStoryboard(name: Const.Storyboard.Name.signUpFirst, bundle: nil)
+      
+        guard let signUpFirstViewController = signupFirstStoryboard.instantiateViewController(withIdentifier: Const.ViewController.identifier.signUpFirst) as? SignUpFirstViewController else { return }
+     
+        self.navigationController?.pushViewController(signUpFirstViewController, animated: true)
     }
     
 
