@@ -8,21 +8,16 @@
 import UIKit
 import Foundation
 
-class SignUpFirstViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class SignUpFirstViewController: UIViewController {
     
     @IBOutlet weak var personImageView: UIImageView!
     
-    lazy var imagePicker: UIImagePickerController = {
-        let picker: UIImagePickerController = UIImagePickerController()
-        picker.sourceType = .photoLibrary
-        picker.delegate = self
-        return picker
-    }()
+    let imagePicker = UIImagePickerController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         pickImage()
-
+        imagePickerAttribute()
       
     }
     
@@ -30,6 +25,13 @@ class SignUpFirstViewController: UIViewController, UIImagePickerControllerDelega
         self.present(self.imagePicker, animated: true)
     }
     
+    private func imagePickerAttribute() {
+        self.imagePicker.sourceType = .photoLibrary
+        self.imagePicker.allowsEditing = true
+        self.imagePicker.delegate = self
+        
+        
+    }
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -45,3 +47,20 @@ class SignUpFirstViewController: UIViewController, UIImagePickerControllerDelega
     }
 }
 
+extension SignUpFirstViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+    var newImage: UIImage? = nil
+        
+        if let possibleImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+        newImage = possibleImage
+    } else if let possibleImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+        newImage = possibleImage
+    }
+    
+        self.personImageView.image = newImage
+        picker.dismiss(animated: true, completion: nil)
+}
+
+}
