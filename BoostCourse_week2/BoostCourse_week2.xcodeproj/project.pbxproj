@@ -115,8 +115,8 @@
 		EC6E0BAE26B0AF2000E4668F /* Constants */ = {
 			isa = PBXGroup;
 			children = (
-				EC6E0BAF26B0AF3300E4668F /* Storyboard.swift */,
 				EC6E0BB326B0B01F00E4668F /* Const.swift */,
+				EC6E0BAF26B0AF3300E4668F /* Storyboard.swift */,
 				EC6E0BB526B0B06800E4668F /* ViewControllers.swift */,
 			);
 			path = Constants;
