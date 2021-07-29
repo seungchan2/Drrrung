@@ -8,6 +8,7 @@
 import UIKit
 import Foundation
 
+// 주석달기
 class SignUpFirstViewController: UIViewController {
     
     @IBOutlet weak var personImageView: UIImageView!
