@@ -15,13 +15,59 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="전화번호" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6FX-Ey-gs1">
+                                <rect key="frame" x="40" y="70" width="59" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cIO-Co-3xW">
+                                <rect key="frame" x="40" y="109" width="334" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="생년월일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eja-Pp-EMv">
+                                <rect key="frame" x="40" y="168" width="59" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="JBi-Kg-wvj">
+                                <rect key="frame" x="40" y="222" width="334" height="216"/>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="euW-Cc-DFt">
+                                <rect key="frame" x="332" y="168" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="euW-Cc-DFt" firstAttribute="top" secondItem="cIO-Co-3xW" secondAttribute="bottom" constant="25" id="653-HN-jh9"/>
+                            <constraint firstItem="6FX-Ey-gs1" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="26" id="HHl-T2-mM1"/>
+                            <constraint firstItem="JBi-Kg-wvj" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="40" id="RXX-gw-N8v"/>
+                            <constraint firstItem="Eja-Pp-EMv" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="40" id="VUe-IC-SU9"/>
+                            <constraint firstItem="JBi-Kg-wvj" firstAttribute="top" secondItem="Eja-Pp-EMv" secondAttribute="bottom" constant="33" id="Ye7-Xi-nrl"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="euW-Cc-DFt" secondAttribute="trailing" constant="40" id="fNK-rl-YyI"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="cIO-Co-3xW" secondAttribute="trailing" constant="40" id="fqS-de-ihK"/>
+                            <constraint firstItem="6FX-Ey-gs1" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="40" id="jBB-sT-d9s"/>
+                            <constraint firstItem="cIO-Co-3xW" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="40" id="o9m-sG-WEE"/>
+                            <constraint firstItem="Eja-Pp-EMv" firstAttribute="top" secondItem="cIO-Co-3xW" secondAttribute="bottom" constant="25" id="rA6-hh-u6l"/>
+                            <constraint firstAttribute="trailing" secondItem="JBi-Kg-wvj" secondAttribute="trailing" constant="40" id="tuQ-im-BLy"/>
+                            <constraint firstItem="cIO-Co-3xW" firstAttribute="top" secondItem="6FX-Ey-gs1" secondAttribute="bottom" constant="18" id="wHF-sa-ffh"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dateLabel" destination="euW-Cc-DFt" id="RcS-hV-VKl"/>
+                        <outlet property="datePicker" destination="JBi-Kg-wvj" id="hs8-Cc-ujZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="35" y="56"/>
+            <point key="canvasLocation" x="34.782608695652179" y="55.580357142857139"/>
         </scene>
     </scenes>
     <resources>
