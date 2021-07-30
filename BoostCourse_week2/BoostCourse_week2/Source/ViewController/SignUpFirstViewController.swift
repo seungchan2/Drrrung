@@ -10,7 +10,6 @@ import UIKit
 
 class SignUpFirstViewController: UIViewController {
     
-    
     // Mark: - @IBOutlet Property
     
     @IBOutlet weak var personImageView: UIImageView!
@@ -18,6 +17,7 @@ class SignUpFirstViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var checkPasswordTextField: UITextField!
     @IBOutlet weak var nextPageButton: UIButton!
+    @IBOutlet weak var informationTextView: UITextView!
     
     // Mark: - Property
     
@@ -82,20 +82,19 @@ extension SignUpFirstViewController: UIImagePickerControllerDelegate, UINavigati
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
-    var newImage: UIImage? = nil
+        var newImage: UIImage? = nil
         
         if let possibleImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
-        newImage = possibleImage
-    } else if let possibleImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-        newImage = possibleImage
-    }
-    
+            newImage = possibleImage
+        } else if let possibleImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            newImage = possibleImage
+        }
         self.personImageView.image = newImage
         picker.dismiss(animated: true, completion: nil)
+    }
+    
 }
-
-}
-    //Mark: -Extension
+    //Mark: - Extension
 
 extension SignUpFirstViewController: UITextFieldDelegate {
     
