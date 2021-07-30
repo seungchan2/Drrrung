@@ -13,6 +13,7 @@ extension Const {
         
         struct identifier {
             static let signUpFirst = "SignUpFirstViewController"
+            static let signUpSecond = "SignUpSecondViewController"
         }
     }
 }

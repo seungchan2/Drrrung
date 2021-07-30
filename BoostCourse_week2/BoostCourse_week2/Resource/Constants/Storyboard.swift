@@ -13,6 +13,7 @@ extension Const {
         
         struct Name {
             static let signUpFirst = "SignUpFirst"
+            static let signUpSecond = "SignUpSecond"
         }
     }
 }
