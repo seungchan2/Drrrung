@@ -8,21 +8,25 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    //MARK: Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
     
+    //MARK: - @IBAction Properties
+    
     @IBAction func touchNextButton(_ sender: Any) {
         
         let signupFirstStoryboard = UIStoryboard(name: Const.Storyboard.Name.signUpFirst, bundle: nil)
-      
+        
         guard let signUpFirstViewController = signupFirstStoryboard.instantiateViewController(withIdentifier: Const.ViewController.identifier.signUpFirst) as? SignUpFirstViewController else { return }
-     
+        
         self.navigationController?.pushViewController(signUpFirstViewController, animated: true)
     }
     
-
+    
 }
 
