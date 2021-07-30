@@ -10,7 +10,7 @@ import UIKit
 
 class SignUpFirstViewController: UIViewController {
     
-    // Mark: - @IBOutlet Property
+    // MARK: - @IBOutlet Property
     
     @IBOutlet weak var personImageView: UIImageView!
     @IBOutlet weak var idTextField: UITextField!
@@ -19,11 +19,11 @@ class SignUpFirstViewController: UIViewController {
     @IBOutlet weak var nextPageButton: UIButton!
     @IBOutlet weak var informationTextView: UITextView!
     
-    // Mark: - Property
+    // MARK: - Property
     
     let imagePicker = UIImagePickerController()
 
-    // Mark: - View Life Cycle
+    // MARK: - View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +41,7 @@ class SignUpFirstViewController: UIViewController {
         self.navigationController?.pushViewController(signUpSecondViewController, animated: true)
     }
     
-    // Mark: - Functions
+    // MARK: - Functions
     
     @objc func pickImage() {
         self.present(self.imagePicker, animated: true)
@@ -76,7 +76,7 @@ class SignUpFirstViewController: UIViewController {
     
 }
 
-// Mark: - Extension
+// MARK: - Extension
 
 extension SignUpFirstViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
