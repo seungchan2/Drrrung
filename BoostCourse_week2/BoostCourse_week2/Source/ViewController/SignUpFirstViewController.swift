@@ -29,6 +29,7 @@ class SignUpFirstViewController: UIViewController {
         super.viewDidLoad()
         pickImage()
         imagePickerAttribute()
+        assignDelegate()
     }
     
     @IBAction func touchNextButton(_ sender: Any) {
@@ -94,25 +95,23 @@ extension SignUpFirstViewController: UIImagePickerControllerDelegate, UINavigati
 }
 
 }
-
+    //Mark: -Extension
 
 extension SignUpFirstViewController: UITextFieldDelegate {
     
-  func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
         
-    if idTextField.text != "" && passwordTextField.text != "" && checkPasswordTextField.text != "" {
-        
-        if passwordTextField.text == checkPasswordTextField.text {
+        if idTextField.text?.isEmpty == false && passwordTextField.text?.isEmpty == false && checkPasswordTextField.text?.isEmpty == false {
+            
             nextPageButton.isEnabled = true
+            if passwordTextField.text == checkPasswordTextField.text {
+                nextPageButton.isEnabled = true
+            } else {
+                nextPageButton.isEnabled = false
+            }
         } else {
             nextPageButton.isEnabled = false
         }
-            
-    } else {
-        nextPageButton.isEnabled = false
     }
-        
-       
-    }
-
+    
 }
