@@ -25,13 +25,16 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.initializePlayer()
+        initializePlayer()
+        addPlayPauseButton()
     }
     
     // MARK: - Functions
     
+    // 처음 Player 초기화 메서드
     private func initializePlayer() {
         guard let soundAsset: NSDataAsset = NSDataAsset(name: "sound") else {
+            print("음원 파일 에셋을 가져올 수 없습니다.")
             return
         }
         
@@ -48,6 +51,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         self.progressSlider.value = Float(self.player.currentTime)
     }
     
+    // 매초마다 Label 업데이트
     private func updateTimeLabelText(time: TimeInterval) {
         let minute: Int = Int(time / 60)
         let second: Int = Int(time.truncatingRemainder(dividingBy: 60))
@@ -57,8 +61,10 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         self.timeLabel.text = timeText
     }
     
+    // 타이머 만들고 수행하는 메서드
     private func makeAndFireTimer() {
-        self.timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: { [unowned self] (timer: Timer) in
+        self.timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true,
+            block: { [unowned self] (timer: Timer) in
             
             if self.progressSlider.isTracking { return }
             
@@ -68,10 +74,13 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         self.timer.fire()
     }
     
+    // 타이머 해제 메서드
     func invalidateTimer() {
         self.timer.invalidate()
-        self.timer = nil
+//        self.timer = nil
+        //-> self.timer = nil 을 해주면 다시 재생이 안됨 Optional Error 발생
     }
+    
     // MARK: - @IBAction Properties
     
     @IBAction func touchPlayPauseButton(_ sender: UIButton) {
@@ -98,7 +107,14 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         self.player.currentTime = TimeInterval(sender.value)
     }
     
-    //Mark: - AVAudioPlayerDelegate
+    // MARK: - Functions
+    
+    func addPlayPauseButton() {
+        playPauseButton.setImage(UIImage(named: "button_play"), for: UIControl.State.normal)
+        playPauseButton.setImage(UIImage(named: "button_pause"), for: UIControl.State.selected)
+    }
+    
+    //MARK: - AVAudioPlayerDelegate
     
     func audioPlayerDecodeErrorDidOccur(_ player: AVAudioPlayer, error: Error?) {
         
@@ -106,7 +122,6 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
             print("오디오 플레이어 디코드 오류 발생")
             return
         }
-        
         let message: String
         message = "오디오 플레이어 오류 발생 \(error.localizedDescription)"
         
@@ -119,16 +134,14 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         
         alert.addAction(okAction)
         self.present(alert, animated: true, completion: nil)
-        
     }
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        self.playPauseButton.isSelected = true
+        self.playPauseButton.isSelected = false
+        //-> 이 코드로 인해 재생 완료 후 다시 플레이버튼으로 바뀜
         self.progressSlider.value = 0
         self.updateTimeLabelText(time: 0)
         self.invalidateTimer()
     }
-    
-    
     
 }
