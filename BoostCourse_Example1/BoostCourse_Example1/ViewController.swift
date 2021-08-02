@@ -32,12 +32,13 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     // MARK: - Functions
     
     // 처음 Player 초기화 메서드
-    private func initializePlayer() {
+    func initializePlayer() {
         guard let soundAsset: NSDataAsset = NSDataAsset(name: "sound") else {
             print("음원 파일 에셋을 가져올 수 없습니다.")
             return
         }
-        
+        // do에서 error 발생 -> catch로 던진다.
+        // do ~ catch 구문에서 try는 필수
         do {
             try self.player = AVAudioPlayer(data: soundAsset.data)
             self.player.delegate = self
@@ -52,17 +53,19 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     // 매초마다 Label 업데이트
-    private func updateTimeLabelText(time: TimeInterval) {
+    func updateTimeLabelText(time: TimeInterval) {
+        //truncatingRemainder(dividingBy: ) -> Double, Float의 나머지 값 구하는 메서드
         let minute: Int = Int(time / 60)
         let second: Int = Int(time.truncatingRemainder(dividingBy: 60))
         let milesecond: Int = Int(time.truncatingRemainder(dividingBy: 1) * 100)
         
+        // String타입으로 선언하고..
         let timeText: String = String(format: "%02ld:%02ld:%02ld", minute, second, milesecond)
         self.timeLabel.text = timeText
     }
     
     // 타이머 만들고 수행하는 메서드
-    private func makeAndFireTimer() {
+    func makeAndFireTimer() {
         self.timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true,
             block: { [unowned self] (timer: Timer) in
             
@@ -81,19 +84,24 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         //-> self.timer = nil 을 해주면 다시 재생이 안됨 Optional Error 발생
     }
     
+    // image : normal -> play , selected -> pause
+    func addPlayPauseButton() {
+        playPauseButton.setImage(UIImage(named: "button_play"), for: UIControl.State.normal)
+        playPauseButton.setImage(UIImage(named: "button_pause"), for: UIControl.State.selected)
+    }
+    
     // MARK: - @IBAction Properties
     
     @IBAction func touchPlayPauseButton(_ sender: UIButton) {
         print("button tapped")
-        
+    
         sender.isSelected = !sender.isSelected
-        
         if sender.isSelected {
             self.player?.play()
         } else {
             self.player?.pause()
         }
-        
+
         if sender.isSelected {
             self.makeAndFireTimer()
         } else {
@@ -107,17 +115,9 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         self.player.currentTime = TimeInterval(sender.value)
     }
     
-    // MARK: - Functions
-    
-    func addPlayPauseButton() {
-        playPauseButton.setImage(UIImage(named: "button_play"), for: UIControl.State.normal)
-        playPauseButton.setImage(UIImage(named: "button_pause"), for: UIControl.State.selected)
-    }
-    
     //MARK: - AVAudioPlayerDelegate
     
     func audioPlayerDecodeErrorDidOccur(_ player: AVAudioPlayer, error: Error?) {
-        
         guard let error: Error = error else {
             print("오디오 플레이어 디코드 오류 발생")
             return
@@ -126,12 +126,12 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         message = "오디오 플레이어 오류 발생 \(error.localizedDescription)"
         
         let alert: UIAlertController = UIAlertController(title: "알림", message: message, preferredStyle: UIAlertController.Style.alert)
-        
+
         let okAction: UIAlertAction = UIAlertAction(title: "확인", style: UIAlertAction.Style.default) { (action: UIAlertAction) -> Void in
-            
+
             self.dismiss(animated: true, completion: nil)
         }
-        
+
         alert.addAction(okAction)
         self.present(alert, animated: true, completion: nil)
     }
@@ -144,4 +144,6 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         self.invalidateTimer()
     }
     
+    
 }
+
