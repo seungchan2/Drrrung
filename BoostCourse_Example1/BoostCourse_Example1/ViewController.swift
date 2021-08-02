@@ -34,7 +34,6 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     // 처음 Player 초기화 메서드
     func initializePlayer() {
         guard let soundAsset: NSDataAsset = NSDataAsset(name: "sound") else {
-            print("음원 파일 에셋을 가져올 수 없습니다.")
             return
         }
         // do에서 error 발생 -> catch로 던진다.
@@ -42,9 +41,8 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         do {
             try self.player = AVAudioPlayer(data: soundAsset.data)
             self.player.delegate = self
-        } catch let error as NSError {
-            print("플레이어 초기화 실패")
-            print("코드 :: \(error.code), 메세지 : \(error.localizedDescription)")
+        } catch _ as NSError {
+            
         }
         
         self.progressSlider.maximumValue = Float(self.player.duration)
@@ -109,7 +107,6 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         }
     }
     @IBAction func sliderValueChanged(_ sender: UISlider) {
-        print("slider value changed")
         self.updateTimeLabelText(time: TimeInterval(sender.value))
         if sender.isTracking { return }
         self.player.currentTime = TimeInterval(sender.value)
@@ -119,7 +116,6 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     
     func audioPlayerDecodeErrorDidOccur(_ player: AVAudioPlayer, error: Error?) {
         guard let error: Error = error else {
-            print("오디오 플레이어 디코드 오류 발생")
             return
         }
         let message: String
