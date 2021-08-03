@@ -158,6 +158,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         self.progressSlider.value = 0
         self.updateTimeLabelText(time: 0)
         self.invalidateTimer()
+        // -> 초기화
     }
     
     
