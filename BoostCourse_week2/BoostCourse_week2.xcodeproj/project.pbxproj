@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC09B4EC26B9AD7C005BF5FA /* UserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC09B4EB26B9AD7C005BF5FA /* UserInformation.swift */; };
 		EC6E0B6826AF000E00E4668F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6E0B6726AF000E00E4668F /* AppDelegate.swift */; };
 		EC6E0B6A26AF000E00E4668F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6E0B6926AF000E00E4668F /* SceneDelegate.swift */; };
 		EC6E0B6C26AF000E00E4668F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6E0B6B26AF000E00E4668F /* ViewController.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EC09B4EB26B9AD7C005BF5FA /* UserInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformation.swift; sourceTree = "<group>"; };
 		EC6E0B6426AF000E00E4668F /* BoostCourse_week2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoostCourse_week2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC6E0B6726AF000E00E4668F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC6E0B6926AF000E00E4668F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +53,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EC09B4EA26B9AD68005BF5FA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EC09B4EB26B9AD7C005BF5FA /* UserInformation.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		EC6E0B5B26AF000E00E4668F = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +103,7 @@
 		EC6E0B7C26AF00F300E4668F /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				EC09B4EA26B9AD68005BF5FA /* Model */,
 				EC6E0B7E26AF010C00E4668F /* ViewController */,
 			);
 			path = Source;
@@ -204,6 +215,7 @@
 				EC6E0BB626B0B06800E4668F /* ViewControllers.swift in Sources */,
 				EC6E0B6C26AF000E00E4668F /* ViewController.swift in Sources */,
 				EC6E0BB026B0AF3300E4668F /* Storyboard.swift in Sources */,
+				EC09B4EC26B9AD7C005BF5FA /* UserInformation.swift in Sources */,
 				EC6E0B6826AF000E00E4668F /* AppDelegate.swift in Sources */,
 				EC6E0B6A26AF000E00E4668F /* SceneDelegate.swift in Sources */,
 				EC6E0B8426B0940D00E4668F /* SignUpFirstViewController.swift in Sources */,
