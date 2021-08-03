@@ -53,7 +53,7 @@
                     <connections>
                         <outlet property="playPauseButton" destination="Tjz-pk-kzl" id="MyI-cR-U0w"/>
                         <outlet property="progressSlider" destination="P4Q-au-EdL" id="ZhW-Vh-zC3"/>
-                        <outlet property="timeLabel" destination="6dL-sU-vXv" id="Ptp-9c-zDi"/>
+                        <outlet property="timeLabel" destination="Tjz-pk-kzl" id="dIZ-09-k5g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
