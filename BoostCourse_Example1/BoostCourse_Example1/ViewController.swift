@@ -33,11 +33,20 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     
     // 처음 Player 초기화 메서드
     func initializePlayer() {
+        // 해당 파일이 존재하지 않을 수 있기 때문에 옵셔널의 형태로 반환
+        // 그 과정에서 unwrapping 과정이 필요
         guard let soundAsset: NSDataAsset = NSDataAsset(name: "sound") else {
             return
         }
-        // do에서 error 발생 -> catch로 던진다.
         // do ~ catch 구문에서 try는 필수
+        // try -> "이 함수가 오류가 발생할 수 있는데, 한번 시도해보겠다"
+        // do {
+        // try 오류 발생 코드
+        // } catch 오류 패턴 1 { 오류 종류에 따른 대응 구현
+        // }
+        // catch { 에러의 종류를 명시하지 않고 코드 블럭을 생성하면 블록 내부에 error라는 지역 상수가 암시적으로 생성
+        // print(error)
+        // }
         do {
             try self.player = AVAudioPlayer(data: soundAsset.data)
             self.player.delegate = self
@@ -64,6 +73,12 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     
     // 타이머 만들고 수행하는 메서드
     func makeAndFireTimer() {
+        // [unowned] / isTracking
+        // 마지막으로 반드시 fire() 메서드를 통해 타이머를 시작해줘야 함 !
+        // 또한 타이머의 역할이 끝나면 반드시 invalidate를 통해 해제 !
+        // 0.01초마다 행해지는 행위를 block 에 명시해주어야 함.
+        // 슬라이더를 움직일 때는 값들을 밀리세컨드 단위로 갱신하지 않고
+        // 슬라이더 값에 따라 갱신하기 위해 if self.progressSlider.isTracking { return }
         self.timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true,
             block: { [unowned self] (timer: Timer) in
             
@@ -91,8 +106,8 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     // MARK: - @IBAction Properties
     
     @IBAction func touchPlayPauseButton(_ sender: UIButton) {
-        print("button tapped")
-    
+        
+        // isSelected 를 활용한 재생 - 정지
         sender.isSelected = !sender.isSelected
         if sender.isSelected {
             self.player?.play()
@@ -107,8 +122,13 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         }
     }
     @IBAction func sliderValueChanged(_ sender: UISlider) {
+        // 슬라이더를 움직여 원하는 재생 구간으로 이동할 때 슬라이더의 값에 따라 라벨 갱신
         self.updateTimeLabelText(time: TimeInterval(sender.value))
+        // 슬라이더를 움직이는 동안은 재생되는 구간이 바뀌지 않고 슬라이더의 움직임을 멈추었을 때
+        // 비로소 해당 위치를 재상하게 하므로 움직이는 동안 음원이 끊기는 현상을 막기 위함
         if sender.isTracking { return }
+        // 슬라이더의 움직이 멈췄을 때 currentTime의 값을 슬라이더 값에 맞추어 할당하므로 원하는 구간으로의
+        // 이동이 가능해짐 !
         self.player.currentTime = TimeInterval(sender.value)
     }
     
