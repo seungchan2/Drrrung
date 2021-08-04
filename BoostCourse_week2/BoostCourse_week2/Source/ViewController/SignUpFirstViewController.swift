@@ -121,6 +121,8 @@ class SignUpFirstViewController: UIViewController {
     
     func confirmData() {
         if textFieldConfirm() == true && textViewConfirm() == true && imageViewConfirm(personImageView) == true {
+            UserInformation.shared.id = idTextField.text
+            UserInformation.shared.password = checkPasswordTextField.text
             nextPageButton.isSelected = true
             nextPageButton.setTitleColor(.systemBlue, for: UIControl.State.normal)
         } else {
