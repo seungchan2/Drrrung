@@ -27,6 +27,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         super.viewDidLoad()
         initializePlayer()
         addPlayPauseButton()
+        
     }
     
     // MARK: - Functions
@@ -53,7 +54,6 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         } catch _ as NSError {
             
         }
-        
         self.progressSlider.maximumValue = Float(self.player.duration)
         self.progressSlider.minimumValue = 0
         self.progressSlider.value = Float(self.player.currentTime)
@@ -83,7 +83,6 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
             block: { [unowned self] (timer: Timer) in
             
             if self.progressSlider.isTracking { return }
-            
             self.updateTimeLabelText(time: self.player.currentTime)
             self.progressSlider.value = Float(self.player.currentTime)
         })
@@ -109,6 +108,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         
         // isSelected 를 활용한 재생 - 정지
         sender.isSelected = !sender.isSelected
+       
         if sender.isSelected {
             self.player?.play()
         } else {

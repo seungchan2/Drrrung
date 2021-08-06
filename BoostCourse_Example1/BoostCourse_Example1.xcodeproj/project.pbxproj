@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC09B4EF26BADA93005BF5FA /* AVAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC09B4EE26BADA93005BF5FA /* AVAudio.swift */; };
 		EC2A1D4F26A9E63600A3C5F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2A1D4E26A9E63600A3C5F0 /* AppDelegate.swift */; };
 		EC2A1D5126A9E63600A3C5F0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2A1D5026A9E63600A3C5F0 /* SceneDelegate.swift */; };
 		EC2A1D5326A9E63600A3C5F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2A1D5226A9E63600A3C5F0 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EC09B4EE26BADA93005BF5FA /* AVAudio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVAudio.swift; sourceTree = "<group>"; };
 		EC2A1D4B26A9E63600A3C5F0 /* BoostCourse_Example1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoostCourse_Example1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC2A1D4E26A9E63600A3C5F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC2A1D5026A9E63600A3C5F0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +39,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EC09B4ED26BADA7A005BF5FA /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				EC09B4EE26BADA93005BF5FA /* AVAudio.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		EC2A1D4226A9E63600A3C5F0 = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +66,7 @@
 		EC2A1D4D26A9E63600A3C5F0 /* BoostCourse_Example1 */ = {
 			isa = PBXGroup;
 			children = (
+				EC09B4ED26BADA7A005BF5FA /* Extension */,
 				EC2A1D4E26A9E63600A3C5F0 /* AppDelegate.swift */,
 				EC2A1D5026A9E63600A3C5F0 /* SceneDelegate.swift */,
 				EC2A1D5226A9E63600A3C5F0 /* ViewController.swift */,
@@ -138,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC2A1D5326A9E63600A3C5F0 /* ViewController.swift in Sources */,
+				EC09B4EF26BADA93005BF5FA /* AVAudio.swift in Sources */,
 				EC2A1D4F26A9E63600A3C5F0 /* AppDelegate.swift in Sources */,
 				EC2A1D5126A9E63600A3C5F0 /* SceneDelegate.swift in Sources */,
 			);
