@@ -35,7 +35,7 @@ class SignUpFirstViewController: UIViewController {
     }
     
     @IBAction func touchNextButton(_ sender: Any) {
-    
+        
         let signupSecondStoryboard = UIStoryboard(name: Const.Storyboard.Name.signUpSecond, bundle: nil)
         
         guard let signUpSecondViewController = signupSecondStoryboard.instantiateViewController(withIdentifier: Const.ViewController.identifier.signUpSecond) as? SignUpSecondViewController else { return }
@@ -64,15 +64,13 @@ class SignUpFirstViewController: UIViewController {
         if let originalImage: UIImage = info[UIImagePickerController.InfoKey.originalImage.rawValue] as? UIImage {
             self.personImageView.image = originalImage
         }
-        
         self.dismiss(animated: true, completion: nil)
-        
     }
     
     // StrongPassword Error 해결
     //  oneTimeCode -> iOS12에서 추가된 타입으로 문자인증이나 본인인증을 할때 사용하는 일회성 인증코드같은 타입
     //  타입은 키체인에 저장할 필요가 없으므로 secure 타입이면서 키보드가 제대로 표시된다.
-
+    
     private func passwordStrongPasswordError() {
         if #available(iOS 12.0, *) {
             passwordTextField.textContentType = .oneTimeCode
@@ -91,6 +89,7 @@ class SignUpFirstViewController: UIViewController {
             print("textFieldConfirm")
             if passwordTextField.text == checkPasswordTextField.text {
                 print("password ggg")
+                nextPageButton.isEnabled = true
                 return true
             } else {
                 nextPageButton.isSelected = false
@@ -151,14 +150,14 @@ extension SignUpFirstViewController: UIImagePickerControllerDelegate, UINavigati
         
     }
     
-    
 }
-//Mark: - Extension
+
+// MARK: - Extension
 
 extension SignUpFirstViewController: UITextFieldDelegate {
     /// Delegate 패턴을 이용하여 textField가 return 버튼이 눌릴때마다 FirstResponder가 idTextField -> passwordTextField -> checkPasswordTextField -> mainTextView 순으로 넘어가며 confirmDatas 메소드를 실행
-       func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-           
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
         if idTextField.isFirstResponder == true{
             passwordTextField.becomeFirstResponder()
             confirmData()
@@ -171,21 +170,20 @@ extension SignUpFirstViewController: UITextFieldDelegate {
         }
         confirmData()
         return true
-
-       }
+        
+    }
     
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
         confirmData()
-    
-}
+        
+    }
 }
 
 extension SignUpFirstViewController: UITextViewDelegate {
     func textViewDidEndEditing(_ textView: UITextView) {
-        print("aa")
         confirmData()
-
-    }
-      
+        
     }
     
+}
+
