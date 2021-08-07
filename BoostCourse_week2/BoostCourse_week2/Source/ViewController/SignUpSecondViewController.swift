@@ -18,7 +18,7 @@ class SignUpSecondViewController: UIViewController {
     
     let dateFormmater: DateFormatter = {
         let formatter: DateFormatter = DateFormatter()
-        formatter.dateFormat = "yyyy/MM//dd"
+        formatter.dateFormat = "yyyy/MM/dd"
         return formatter
     }()
     
@@ -27,14 +27,11 @@ class SignUpSecondViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         datePickerAction()
-        
-    
     }
     
     // MARK: - @IBAction Property
     
     @IBAction func datePickerValueChanged(_ sender: UIDatePicker) {
-            
             let date: Date = self.datePicker.date
             let dateString: String = self.dateFormmater.string(from: date)
             self.dateLabel.text = dateString
