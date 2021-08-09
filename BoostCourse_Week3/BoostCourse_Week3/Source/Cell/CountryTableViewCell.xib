@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="countryCell" rowHeight="70" id="KGk-i7-Jjw" customClass="CountryTableViewCell" customModule="BoostCourse_Week3" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="CountryTableViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="CountryTableViewCell" rowHeight="70" id="KGk-i7-Jjw" customClass="CountryTableViewCell" customModule="BoostCourse_Week3" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -26,7 +26,7 @@
                         </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ULO-qa-0Ag">
-                        <rect key="frame" x="186" y="25" width="42" height="21"/>
+                        <rect key="frame" x="186" y="25" width="104" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -37,13 +37,13 @@
                     <constraint firstItem="ULO-qa-0Ag" firstAttribute="leading" secondItem="qhR-2D-LVE" secondAttribute="trailing" constant="58" id="6Af-VG-HEJ"/>
                     <constraint firstAttribute="bottom" secondItem="qhR-2D-LVE" secondAttribute="bottom" id="Izp-7j-8WQ"/>
                     <constraint firstItem="2qC-8s-s2R" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="JEG-Eo-fIo"/>
+                    <constraint firstAttribute="trailing" secondItem="ULO-qa-0Ag" secondAttribute="trailing" constant="124" id="ND3-BI-jyH"/>
                     <constraint firstItem="qhR-2D-LVE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="O7K-GI-ZIb"/>
                     <constraint firstAttribute="bottom" secondItem="2qC-8s-s2R" secondAttribute="bottom" id="PU3-VY-xsi"/>
                     <constraint firstItem="qhR-2D-LVE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Qry-8a-QNf"/>
                     <constraint firstItem="qhR-2D-LVE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="VcJ-Zc-HHw"/>
                     <constraint firstAttribute="trailing" secondItem="qhR-2D-LVE" secondAttribute="trailing" constant="286" id="Zkp-JR-Mqh"/>
                     <constraint firstItem="ULO-qa-0Ag" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="25" id="fzo-mJ-swn"/>
-                    <constraint firstAttribute="trailing" secondItem="ULO-qa-0Ag" secondAttribute="trailing" constant="186" id="gNS-dO-rVv"/>
                     <constraint firstAttribute="trailing" secondItem="2qC-8s-s2R" secondAttribute="trailing" id="vM5-gp-sq7"/>
                     <constraint firstAttribute="bottom" secondItem="ULO-qa-0Ag" secondAttribute="bottom" constant="24" id="yeJ-8s-OQn"/>
                 </constraints>

@@ -8,12 +8,18 @@
 import UIKit
 
 class CountryTableViewCell: UITableViewCell {
+    
+    // MARK: Property
+    
+    static let identifier: String = "CountryTableViewCell"
 
+    // MARK: @IBOutlet
+    
     @IBOutlet weak var countryNameLabel: UILabel!
     @IBOutlet weak var countryImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     @IBAction func touchNextPageButton(_ sender: Any) {
     }
@@ -21,7 +27,17 @@ class CountryTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+    }
+    
+    //MARK: Function
+    
+    func setData(imageName: String, title: String) {
+        if let image = UIImage(named: imageName)
+        {
+            countryImageView.image = image
+        }
+        countryNameLabel.text = title
+        
     }
     
 }
