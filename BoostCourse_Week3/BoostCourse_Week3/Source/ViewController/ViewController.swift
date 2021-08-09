@@ -18,14 +18,25 @@ class ViewController: UIViewController {
     var countryList : [CountryList] = []
     
     //MARK: -Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         registerXib()
+        navigationItemSetting()
         setCountryList()
         assignDelegate()
+        
     }
     
     //MARK: - Functions
+    
+    func navigationItemSetting() {
+        self.view.backgroundColor = .red
+        self.navigationItem.title = "세계 날씨"
+        let rightButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.play, target: self, action: #selector(pressButton(_:)))
+        self.navigationItem.rightBarButtonItem = rightButton
+    }
+
     
     private func registerXib() {
         let nibName = UINib(nibName: Const.Xib.Name.CountryTableViewCell, bundle: nil)
@@ -42,13 +53,18 @@ class ViewController: UIViewController {
                             CountryList(iconImageName: "flag_fr", title: "프랑스"),
                             CountryList(iconImageName: "flag_jp", title: "일본")])
     }
-    
     private func assignDelegate() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
     }
     
+    // MARK: - @IBAction
+    
+    @IBAction func pressButton(_ sender: UIBarButtonItem){
+        let weatherView = WeatherViewController()
+        self.navigationController?.pushViewController(weatherView, animated: true)
+    }
 }
 
 //MARK: - Extension
