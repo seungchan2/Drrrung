@@ -14,6 +14,7 @@ extension Const {
         struct Name {
             
             static let CountryTableViewCell = "CountryTableViewCell"
+            static let WeatherTableViewCell = "WeatherTableViewCell"
         }
     }
 }
