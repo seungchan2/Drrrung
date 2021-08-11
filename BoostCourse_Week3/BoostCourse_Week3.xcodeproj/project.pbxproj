@@ -20,6 +20,8 @@
 		EC09B52B26C1157A005BF5FA /* Xib.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC09B52A26C1157A005BF5FA /* Xib.swift */; };
 		EC09B52F26C11837005BF5FA /* Weather.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC09B52E26C11837005BF5FA /* Weather.storyboard */; };
 		EC09B53126C1184A005BF5FA /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC09B53026C1184A005BF5FA /* WeatherViewController.swift */; };
+		EC09B56526C246FC005BF5FA /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC09B56326C246FC005BF5FA /* WeatherTableViewCell.swift */; };
+		EC09B56626C246FC005BF5FA /* WeatherTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC09B56426C246FC005BF5FA /* WeatherTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		EC09B52A26C1157A005BF5FA /* Xib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Xib.swift; sourceTree = "<group>"; };
 		EC09B52E26C11837005BF5FA /* Weather.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Weather.storyboard; sourceTree = "<group>"; };
 		EC09B53026C1184A005BF5FA /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+		EC09B56326C246FC005BF5FA /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WeatherTableViewCell.swift; path = BoostCourse_Week3/Source/Cell/WeatherTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		EC09B56426C246FC005BF5FA /* WeatherTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = WeatherTableViewCell.xib; path = BoostCourse_Week3/Source/Cell/WeatherTableViewCell.xib; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +127,8 @@
 			children = (
 				EC09B52126BE83D4005BF5FA /* CountryTableViewCell.swift */,
 				EC09B52226BE83D4005BF5FA /* CountryTableViewCell.xib */,
+				EC09B56326C246FC005BF5FA /* WeatherTableViewCell.swift */,
+				EC09B56426C246FC005BF5FA /* WeatherTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -205,6 +211,7 @@
 				EC09B52F26C11837005BF5FA /* Weather.storyboard in Resources */,
 				EC09B51426BE831C005BF5FA /* LaunchScreen.storyboard in Resources */,
 				EC09B51126BE831C005BF5FA /* Assets.xcassets in Resources */,
+				EC09B56626C246FC005BF5FA /* WeatherTableViewCell.xib in Resources */,
 				EC09B50F26BE831A005BF5FA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -222,6 +229,7 @@
 				EC09B52B26C1157A005BF5FA /* Xib.swift in Sources */,
 				EC09B50826BE831A005BF5FA /* AppDelegate.swift in Sources */,
 				EC09B53126C1184A005BF5FA /* WeatherViewController.swift in Sources */,
+				EC09B56526C246FC005BF5FA /* WeatherTableViewCell.swift in Sources */,
 				EC09B50A26BE831A005BF5FA /* SceneDelegate.swift in Sources */,
 				EC09B52926C11568005BF5FA /* Const.swift in Sources */,
 			);
