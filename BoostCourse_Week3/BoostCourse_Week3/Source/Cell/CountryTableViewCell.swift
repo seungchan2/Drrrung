@@ -12,7 +12,7 @@ class CountryTableViewCell: UITableViewCell {
     // MARK: Property
     
     static let identifier: String = "CountryTableViewCell"
-
+    
     // MARK: @IBOutlet
     
     @IBOutlet weak var countryNameLabel: UILabel!
@@ -22,16 +22,14 @@ class CountryTableViewCell: UITableViewCell {
         super.awakeFromNib()
     }
     @IBAction func touchNextPageButton(_ sender: Any) {
-    
-
+        
+        
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
     }
-    
-    //MARK: Function
     
     func setData(imageName: String, title: String) {
         if let image = UIImage(named: imageName)
