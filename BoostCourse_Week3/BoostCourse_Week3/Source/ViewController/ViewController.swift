@@ -25,7 +25,6 @@ class ViewController: UIViewController {
         navigationItemSetting()
         setCountryList()
         assignDelegate()
-        
     }
     
     //MARK: - Functions
@@ -53,6 +52,7 @@ class ViewController: UIViewController {
                             CountryList(iconImageName: "flag_fr", title: "프랑스"),
                             CountryList(iconImageName: "flag_jp", title: "일본")])
     }
+    
     private func assignDelegate() {
         tableView.delegate = self
         tableView.dataSource = self
@@ -88,9 +88,6 @@ extension ViewController: UITableViewDataSource {
         countryCell.setData(imageName: countryList[indexPath.row].iconImageName, title: countryList[indexPath.row].title)
         
         return countryCell
-        
-        
-        
         
     }
     
