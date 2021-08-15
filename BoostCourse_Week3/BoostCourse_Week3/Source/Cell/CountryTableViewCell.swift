@@ -23,7 +23,6 @@ class CountryTableViewCell: UITableViewCell {
     }
     @IBAction func touchNextPageButton(_ sender: Any) {
         
-        
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
