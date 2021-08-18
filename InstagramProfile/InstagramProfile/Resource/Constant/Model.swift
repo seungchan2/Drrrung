@@ -16,3 +16,7 @@ struct ListList {
     var imageName: String
     var title: String
 }
+
+struct ImageList {
+    var imageName: String
+}
