@@ -50,7 +50,7 @@ class PlusViewController: UIViewController {
     
 }
 
-    //MARK: Extension
+//MARK: Extension
 
 extension PlusViewController: UITableViewDelegate {
     
@@ -71,8 +71,4 @@ extension PlusViewController: UITableViewDataSource {
         return cell
 
     }
-    
-    
-    
-    
 }
