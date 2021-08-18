@@ -26,6 +26,10 @@
 		ECF24B9026CBBBB2000F4354 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECF24B8E26CBBBB2000F4354 /* ListTableViewCell.xib */; };
 		ECF24B9326CBE423000F4354 /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF24B9126CBE423000F4354 /* MainCollectionViewCell.swift */; };
 		ECF24B9426CBE423000F4354 /* MainCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECF24B9226CBE423000F4354 /* MainCollectionViewCell.xib */; };
+		ECF24B9926CC22E3000F4354 /* HightlightCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF24B9726CC22E3000F4354 /* HightlightCollectionViewCell.swift */; };
+		ECF24B9A26CC22E3000F4354 /* HightlightCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECF24B9826CC22E3000F4354 /* HightlightCollectionViewCell.xib */; };
+		ECF24B9D26CC27BB000F4354 /* StoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF24B9B26CC27BB000F4354 /* StoryCollectionViewCell.swift */; };
+		ECF24B9E26CC27BB000F4354 /* StoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECF24B9C26CC27BB000F4354 /* StoryCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +54,10 @@
 		ECF24B8E26CBBBB2000F4354 /* ListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
 		ECF24B9126CBE423000F4354 /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
 		ECF24B9226CBE423000F4354 /* MainCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainCollectionViewCell.xib; sourceTree = "<group>"; };
+		ECF24B9726CC22E3000F4354 /* HightlightCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HightlightCollectionViewCell.swift; sourceTree = "<group>"; };
+		ECF24B9826CC22E3000F4354 /* HightlightCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HightlightCollectionViewCell.xib; sourceTree = "<group>"; };
+		ECF24B9B26CC27BB000F4354 /* StoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		ECF24B9C26CC27BB000F4354 /* StoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoryCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,12 +140,8 @@
 		ECF24B7126CA9AB8000F4354 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				ECF24B8626CADD05000F4354 /* PlusTableViewCell.swift */,
-				ECF24B8726CADD05000F4354 /* PlusTableViewCell.xib */,
-				ECF24B8D26CBBBB2000F4354 /* ListTableViewCell.swift */,
-				ECF24B8E26CBBBB2000F4354 /* ListTableViewCell.xib */,
-				ECF24B9126CBE423000F4354 /* MainCollectionViewCell.swift */,
-				ECF24B9226CBE423000F4354 /* MainCollectionViewCell.xib */,
+				ECF24B9626CC223F000F4354 /* CollectionView */,
+				ECF24B9526CC222E000F4354 /* TableView */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -152,6 +156,30 @@
 				ECF24B8A26CADED0000F4354 /* Model.swift */,
 			);
 			path = Constant;
+			sourceTree = "<group>";
+		};
+		ECF24B9526CC222E000F4354 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				ECF24B8626CADD05000F4354 /* PlusTableViewCell.swift */,
+				ECF24B8726CADD05000F4354 /* PlusTableViewCell.xib */,
+				ECF24B8D26CBBBB2000F4354 /* ListTableViewCell.swift */,
+				ECF24B8E26CBBBB2000F4354 /* ListTableViewCell.xib */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		ECF24B9626CC223F000F4354 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				ECF24B9126CBE423000F4354 /* MainCollectionViewCell.swift */,
+				ECF24B9226CBE423000F4354 /* MainCollectionViewCell.xib */,
+				ECF24B9726CC22E3000F4354 /* HightlightCollectionViewCell.swift */,
+				ECF24B9826CC22E3000F4354 /* HightlightCollectionViewCell.xib */,
+				ECF24B9B26CC27BB000F4354 /* StoryCollectionViewCell.swift */,
+				ECF24B9C26CC27BB000F4354 /* StoryCollectionViewCell.xib */,
+			);
+			path = CollectionView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,9 +239,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECF24B9A26CC22E3000F4354 /* HightlightCollectionViewCell.xib in Resources */,
 				ECF24B6526CA99D5000F4354 /* LaunchScreen.storyboard in Resources */,
 				ECF24B9426CBE423000F4354 /* MainCollectionViewCell.xib in Resources */,
 				ECF24B8926CADD05000F4354 /* PlusTableViewCell.xib in Resources */,
+				ECF24B9E26CC27BB000F4354 /* StoryCollectionViewCell.xib in Resources */,
 				ECF24B6226CA99D5000F4354 /* Assets.xcassets in Resources */,
 				ECF24B6026CA99D5000F4354 /* Main.storyboard in Resources */,
 				ECF24B9026CBBBB2000F4354 /* ListTableViewCell.xib in Resources */,
@@ -231,11 +261,13 @@
 				ECF24B7D26CAC010000F4354 /* PlusViewController.swift in Sources */,
 				ECF24B5926CA99D5000F4354 /* AppDelegate.swift in Sources */,
 				ECF24B8826CADD05000F4354 /* PlusTableViewCell.swift in Sources */,
+				ECF24B9926CC22E3000F4354 /* HightlightCollectionViewCell.swift in Sources */,
 				ECF24B8526CAC24E000F4354 /* ViewControllers.swift in Sources */,
 				ECF24B9326CBE423000F4354 /* MainCollectionViewCell.swift in Sources */,
 				ECF24B8F26CBBBB2000F4354 /* ListTableViewCell.swift in Sources */,
 				ECF24B8126CAC21C000F4354 /* Xib.swift in Sources */,
 				ECF24B8326CAC23C000F4354 /* Storyboard.swift in Sources */,
+				ECF24B9D26CC27BB000F4354 /* StoryCollectionViewCell.swift in Sources */,
 				ECF24B7B26CAC008000F4354 /* ListViewController.swift in Sources */,
 				ECF24B8B26CADED0000F4354 /* Model.swift in Sources */,
 				ECF24B5B26CA99D5000F4354 /* SceneDelegate.swift in Sources */,
