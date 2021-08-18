@@ -69,17 +69,25 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AxR-us-bZH">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="36"/>
+                                <color key="backgroundColor" systemColor="labelColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Zbr-ci-PQm" secondAttribute="bottom" id="0c3-BZ-qK8"/>
+                            <constraint firstItem="Zbr-ci-PQm" firstAttribute="top" secondItem="AxR-us-bZH" secondAttribute="bottom" constant="49" id="58B-aG-Jxw"/>
                             <constraint firstItem="K6a-hu-Pq0" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="6bs-Hd-KPh"/>
                             <constraint firstItem="K6a-hu-Pq0" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="33" id="FjD-Yk-m2J"/>
                             <constraint firstItem="Zbr-ci-PQm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="IjW-P3-qpN"/>
                             <constraint firstItem="Zbr-ci-PQm" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="KBY-Y4-gPL"/>
                             <constraint firstItem="K6a-hu-Pq0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="MwN-PV-u55"/>
+                            <constraint firstAttribute="trailing" secondItem="AxR-us-bZH" secondAttribute="trailing" id="adX-IE-B1j"/>
+                            <constraint firstItem="AxR-us-bZH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="jir-0N-Nfd"/>
                             <constraint firstItem="Zbr-ci-PQm" firstAttribute="top" secondItem="K6a-hu-Pq0" secondAttribute="bottom" id="mEz-rm-Cmq"/>
+                            <constraint firstItem="AxR-us-bZH" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="nne-FX-wit"/>
                         </constraints>
                     </view>
                     <connections>
@@ -154,6 +162,9 @@
     <resources>
         <image name="list.bullet" catalog="system" width="128" height="88"/>
         <image name="plus.app" catalog="system" width="128" height="114"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
