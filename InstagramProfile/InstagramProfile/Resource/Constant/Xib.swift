@@ -15,6 +15,9 @@ extension Const {
             
             static let PlusTableViewCell = "PlusTableViewCell"
             static let ListTableViewCell = "ListTableViewCell"
+            static let MainCollectionViewCell = "MainCollectionViewCell"
+            static let HightlightCollectionViewCell = "HightlightCollectionViewCell"
+            static let StoryCollectionViewCell = "StoryCollectionViewCell"
         }
     }
 }
