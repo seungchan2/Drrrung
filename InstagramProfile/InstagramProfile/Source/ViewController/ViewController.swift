@@ -11,11 +11,14 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var mainCollectionView: UICollectionView!
     
+    let refreshControl = UIRefreshControl()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         registerXib()
         registerNib()
         assignDelegate()
+        initRefresh()
  
     }
     
@@ -33,6 +36,21 @@ class ViewController: UIViewController {
     func assignDelegate() {
         mainCollectionView.dataSource = self
         mainCollectionView.delegate = self
+    }
+    
+    func initRefresh()
+    {
+        refreshControl.addTarget(self, action: #selector(refreshCollection(refresh:)), for: .valueChanged)
+        mainCollectionView.refreshControl = refreshControl
+    }
+    
+    @objc func refreshCollection(refresh: UIRefreshControl){
+        print("새로고침")
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            self.mainCollectionView.reloadData()
+            refresh.endRefreshing()
+        }
     }
     
 
