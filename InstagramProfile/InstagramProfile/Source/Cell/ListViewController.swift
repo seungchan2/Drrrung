@@ -9,13 +9,20 @@ import UIKit
 
 class ListViewController: UIViewController {
     
+    //MARK: Property
+    
     var listList : [ListList] = []
     
+    //MARK: @IBOutlet
+    
     @IBOutlet weak var listTableView: UITableView!
-   
+    
+    // 터치시 모달창 내리기
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    //MARK: LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +31,8 @@ class ListViewController: UIViewController {
         setListList()
         listTableViewAttribute()
     }
+    
+    //MARK: Functions
     
     private func assignDelegate() {
         listTableView.delegate = self
@@ -46,6 +55,9 @@ class ListViewController: UIViewController {
     }
     
 }
+
+//MARK: Extensions
+
 
 extension ListViewController: UITableViewDelegate {
     
