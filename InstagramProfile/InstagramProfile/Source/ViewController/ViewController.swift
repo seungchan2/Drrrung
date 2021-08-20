@@ -8,10 +8,16 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    //MARK: @IBOutlet
 
     @IBOutlet weak var mainCollectionView: UICollectionView!
     
+    //MARK: Property
+    
     let refreshControl = UIRefreshControl()
+    
+    //MARK: LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,8 +25,9 @@ class ViewController: UIViewController {
         registerNib()
         assignDelegate()
         initRefresh()
- 
     }
+    
+    //MARK: Functions
     
     func registerXib() {
         let nibName = UINib(nibName: Const.Xib.Name.MainCollectionViewCell, bundle: nil)
@@ -53,22 +60,24 @@ class ViewController: UIViewController {
         }
     }
     
-
+    //MARK: @IBAction
+    
     @IBAction func touchMakeButton(_ sender: Any) {
         
         guard let nextVC = self.storyboard?.instantiateViewController(identifier: Const.Storyboard.Name.plus) as? PlusViewController else {return}
         self.present(nextVC, animated: true, completion: nil)
         
     }
-    @IBAction func touchListButton(_ sender: Any) {
+    @IBActio
+    n func touchListButton(_ sender: Any) {
         
         guard let nextVC = self.storyboard?.instantiateViewController(identifier: Const.Storyboard.Name.list) as? ListViewController else {return}
         
         self.present(nextVC, animated: true, completion: nil)
     }
-    
 
 }
+    //MARK: Extension
 
 extension ViewController: UICollectionViewDelegate {
     
