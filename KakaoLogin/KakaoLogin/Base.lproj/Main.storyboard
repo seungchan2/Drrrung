@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="KakaoLogin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="카카오톡으로 로그인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VWc-KR-QHv">
+                                <rect key="frame" x="138.5" y="171" width="137" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kakao_login_medium_narrow" translatesAutoresizingMaskIntoConstraints="NO" id="pjD-1G-Q6T">
+                                <rect key="frame" x="115.5" y="222" width="183" height="45"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pjD-1G-Q6T" firstAttribute="centerX" secondItem="VWc-KR-QHv" secondAttribute="centerX" id="A2x-Lg-eCq"/>
+                            <constraint firstItem="pjD-1G-Q6T" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fxY-aa-zgC"/>
+                            <constraint firstItem="VWc-KR-QHv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="127" id="lch-S0-gEw"/>
+                            <constraint firstItem="VWc-KR-QHv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="s2j-1G-Aed"/>
+                            <constraint firstItem="pjD-1G-Q6T" firstAttribute="top" secondItem="VWc-KR-QHv" secondAttribute="bottom" constant="30" id="tVf-hA-HmN"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="kakaoImage" destination="pjD-1G-Q6T" id="kHR-6p-Rs0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="88.392857142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="kakao_login_medium_narrow" width="183" height="45"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
