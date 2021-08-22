@@ -7,22 +7,52 @@
 
 import UIKit
 import KakaoSDKUser
+import KakaoSDKAuth
+import KakaoSDKCommon
 
 
 class ViewController: UIViewController {
-    @IBOutlet weak var kakaoImage: UIImageView!
+    @IBOutlet weak var kakaoLoginImage: UIImageView!
+    @IBOutlet weak var kakaoAccountImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loginKakao()
         setGesture()
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
+        if (AuthApi.hasToken()) {
+            UserApi.shared.accessTokenInfo { (_, error) in
+                if let error = error {
+                    if let sdkError = error as? SdkError, sdkError.isInvalidTokenError() == true  {
+                        
+                    }
+                    else {
+                        
+                    }
+                }
+                else {
+                    
+                    self.getUserInfo()
+                }
+            }
+        }
+        else {
+            
+        }
     }
     
+    // KakaoImage TapGesture
     private func setGesture() {
         let kakaoLogin = UITapGestureRecognizer(target: self, action: #selector(loginKakao))
-        kakaoImage.isUserInteractionEnabled = true
-        kakaoImage.addGestureRecognizer(kakaoLogin)
+        kakaoLoginImage.isUserInteractionEnabled = true
+        kakaoLoginImage.addGestureRecognizer(kakaoLogin)
+        
+        let kakaoAccountLogin = UITapGestureRecognizer(target: self, action: #selector(loginKakaoAccount))
+        kakaoAccountImage.isUserInteractionEnabled = true
+        kakaoAccountImage.addGestureRecognizer(kakaoAccountLogin)
     }
     
     private func getUserInfo() {
@@ -32,6 +62,16 @@ class ViewController: UIViewController {
             }
             else {
                 print("me() success.")
+                
+                let nickname = user?.kakaoAccount?.profile?.nickname
+                let email = user?.kakaoAccount?.email
+                
+                guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "LogoutViewController") as? LogoutViewController else { return }
+                
+                // ✅ 사용자 정보 넘기기
+                nextVC.nickname = nickname
+                nextVC.email = email
+                self.navigationController?.pushViewController(nextVC, animated: true)
             }
             
         }
@@ -39,6 +79,7 @@ class ViewController: UIViewController {
     
     @objc func loginKakao() {
         print("loginKakao() called.")
+        
         if (UserApi.isKakaoTalkLoginAvailable()) {
             UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
                 if let error = error {
@@ -46,16 +87,32 @@ class ViewController: UIViewController {
                 }
                 else {
                     print("loginWithKakaoTalk() success.")
-                    _ = oauthToken
-            
-                self.getUserInfo()
+                    //                    _ = oauthToken
+                    
+                    self.getUserInfo()
                 }
             }
         }
-
+        
         else {
             print("카카오톡 미설치")
         }
+    }
+    
+    @objc func loginKakaoAccount() {
+        print("loginKakaoAccount() called.")
+        
+        UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
+            if let error = error {
+                print(error)
+            }
+            else {
+                print("loginWithKakaoAccount() success.")
+                
+                self.getUserInfo()
+            }
+        }
+        
     }
 }
 
