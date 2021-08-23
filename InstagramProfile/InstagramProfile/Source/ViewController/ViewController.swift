@@ -32,6 +32,9 @@ class ViewController: UIViewController {
     func registerXib() {
         let nibName = UINib(nibName: Const.Xib.Name.MainCollectionViewCell, bundle: nil)
         mainCollectionView.register(nibName, forCellWithReuseIdentifier: Const.Xib.Name.MainCollectionViewCell)
+      
+        let xibName = UINib(nibName: Const.Xib.Name.StoryCollectionViewCell, bundle: nil)
+        mainCollectionView.register(xibName, forCellWithReuseIdentifier: Const.Xib.Name.StoryCollectionViewCell)
     }
     
     func registerNib() {
@@ -39,7 +42,6 @@ class ViewController: UIViewController {
         mainCollectionView.register(nibName, forCellWithReuseIdentifier:
                                         Const.Xib.Name.HightlightCollectionViewCell)
     }
-    
     func assignDelegate() {
         mainCollectionView.dataSource = self
         mainCollectionView.delegate = self
@@ -68,8 +70,7 @@ class ViewController: UIViewController {
         self.present(nextVC, animated: true, completion: nil)
         
     }
-    @IBActio
-    n func touchListButton(_ sender: Any) {
+    @IBAction func touchListButton(_ sender: Any) {
         
         guard let nextVC = self.storyboard?.instantiateViewController(identifier: Const.Storyboard.Name.list) as? ListViewController else {return}
         
@@ -81,20 +82,22 @@ class ViewController: UIViewController {
 
 extension ViewController: UICollectionViewDelegate {
     
+    
 }
 
 extension ViewController: UICollectionViewDataSource {
-    // section 설정
+    // section 설정 -> 우선 임의로 설정
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        2
+        return 3
     }
-    // section 에 따른 return
+    // section 에 따른 셀의 개수 return
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
         case 1:
             return 1
+        // Expandable 효과를 주기 위해서 2개로 반환
         case 2:
-            return 1
+            return 2
             
         default:
             return 1
@@ -111,32 +114,47 @@ extension ViewController: UICollectionViewDataSource {
         } else if indexPath.section == 1 {
             cell = mainCollectionView.dequeueReusableCell(withReuseIdentifier: "HightlightCollectionViewCell", for: indexPath) as! HightlightCollectionViewCell
             print("section1")
-        } else {
+        } else { indexPath.section == 2
+            cell = mainCollectionView.dequeueReusableCell(withReuseIdentifier: "StoryCollectionViewCell", for: indexPath) as! StoryCollectionViewCell
         }
         return cell
     }
+    
 
 }
 extension ViewController: UICollectionViewDelegateFlowLayout {
     
-    // section의 높이 설정
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        switch indexPath.row {
+//        case 1:
+//            print("2")
+//        case 2:
+//            if hight
+//        case 3:
+//        default :
+//
+            
+        }
+    }
+    
+//     section의 높이 설정
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
+
         if indexPath.section == 0 {
             return CGSize(width: mainCollectionView.frame.width, height: mainCollectionView.frame.height/3)
         } else if indexPath.section == 1 {
             let width = UIScreen.main.bounds.width
-            
+
             let cellwidth = 375
             let cellheight = 137
-            
+
             return CGSize(width: cellwidth, height: cellheight)
-            
+
         } else {
             return CGSize(width: 100, height: 100)
-            
-        }
 
+        }
+//
         }
         
     }
