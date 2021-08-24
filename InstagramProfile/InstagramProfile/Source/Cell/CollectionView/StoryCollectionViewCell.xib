@@ -16,7 +16,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Dcn-lG-48G">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tHJ-k3-Af9">
                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                         <color key="backgroundColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </imageView>
@@ -24,13 +24,13 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="Dcn-lG-48G" secondAttribute="trailing" id="OuB-ve-ujV"/>
-                <constraint firstItem="Dcn-lG-48G" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="St4-M5-t89"/>
-                <constraint firstAttribute="bottom" secondItem="Dcn-lG-48G" secondAttribute="bottom" id="Xoi-5K-NHv"/>
-                <constraint firstItem="Dcn-lG-48G" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="whR-9M-mIG"/>
+                <constraint firstItem="tHJ-k3-Af9" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="1Na-Hj-pup"/>
+                <constraint firstAttribute="bottom" secondItem="tHJ-k3-Af9" secondAttribute="bottom" id="RxB-mb-aNk"/>
+                <constraint firstItem="tHJ-k3-Af9" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="inD-kE-PyE"/>
+                <constraint firstAttribute="trailing" secondItem="tHJ-k3-Af9" secondAttribute="trailing" id="vkR-Qk-aVl"/>
             </constraints>
             <connections>
-                <outlet property="storyImage" destination="Dcn-lG-48G" id="2X5-Gf-Cju"/>
+                <outlet property="storyImage" destination="tHJ-k3-Af9" id="MYU-rh-We6"/>
             </connections>
             <point key="canvasLocation" x="18.840579710144929" y="82.366071428571431"/>
         </collectionViewCell>

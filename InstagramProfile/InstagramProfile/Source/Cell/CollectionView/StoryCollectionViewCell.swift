@@ -11,9 +11,11 @@ class StoryCollectionViewCell: UICollectionViewCell {
     
     static let identifier: String = "StoryCollectionViewCell"
 
+
     @IBOutlet weak var storyImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
+       
         
     }
 
