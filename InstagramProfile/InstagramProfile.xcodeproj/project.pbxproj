@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC3FD25026D40015007E6366 /* Hightlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3FD24F26D40015007E6366 /* Hightlight.swift */; };
 		ECF24B5926CA99D5000F4354 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF24B5826CA99D5000F4354 /* AppDelegate.swift */; };
 		ECF24B5B26CA99D5000F4354 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF24B5A26CA99D5000F4354 /* SceneDelegate.swift */; };
 		ECF24B5D26CA99D5000F4354 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF24B5C26CA99D5000F4354 /* ViewController.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EC3FD24F26D40015007E6366 /* Hightlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hightlight.swift; sourceTree = "<group>"; };
 		ECF24B5526CA99D5000F4354 /* InstagramProfile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramProfile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECF24B5826CA99D5000F4354 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECF24B5A26CA99D5000F4354 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +73,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EC3FD24E26D40003007E6366 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EC3FD24F26D40015007E6366 /* Hightlight.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		ECF24B4C26CA99D5000F4354 = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +123,7 @@
 		ECF24B6D26CA9A7B000F4354 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				EC3FD24E26D40003007E6366 /* Model */,
 				ECF24B7126CA9AB8000F4354 /* Cell */,
 				ECF24B7026CA9AB3000F4354 /* ViewController */,
 			);
@@ -264,6 +275,7 @@
 				ECF24B9926CC22E3000F4354 /* HightlightCollectionViewCell.swift in Sources */,
 				ECF24B8526CAC24E000F4354 /* ViewControllers.swift in Sources */,
 				ECF24B9326CBE423000F4354 /* MainCollectionViewCell.swift in Sources */,
+				EC3FD25026D40015007E6366 /* Hightlight.swift in Sources */,
 				ECF24B8F26CBBBB2000F4354 /* ListTableViewCell.swift in Sources */,
 				ECF24B8126CAC21C000F4354 /* Xib.swift in Sources */,
 				ECF24B8326CAC23C000F4354 /* Storyboard.swift in Sources */,
