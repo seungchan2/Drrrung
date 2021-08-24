@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+struct Hightlight{
+    
+    let title: String
+    let content: String
+    var open = false
+  
+    }
+
