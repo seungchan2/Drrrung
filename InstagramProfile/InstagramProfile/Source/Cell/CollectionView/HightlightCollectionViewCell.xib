@@ -62,6 +62,7 @@
             </constraints>
             <size key="customSize" width="379" height="54"/>
             <connections>
+                <outlet property="arrowButton" destination="ogT-OC-VjC" id="DZb-ZR-ww7"/>
                 <outlet property="arrowImageView" destination="GgG-HY-CcN" id="znf-Qa-aRu"/>
                 <outlet property="hightlightView" destination="RFk-6U-f88" id="hOa-Kg-pDP"/>
             </connections>
