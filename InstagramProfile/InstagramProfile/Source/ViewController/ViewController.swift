@@ -9,6 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    
     //MARK: @IBOutlet
 
     @IBOutlet weak var mainCollectionView: UICollectionView!
@@ -16,6 +17,7 @@ class ViewController: UIViewController {
     //MARK: Property
     
     let refreshControl = UIRefreshControl()
+    
     
     
     //MARK: LifeCycle
@@ -85,7 +87,7 @@ class ViewController: UIViewController {
 
 extension ViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        mainCollectionView.reloadData()
+      
     }
     
     
@@ -103,16 +105,10 @@ extension ViewController: UICollectionViewDataSource {
         switch section {
         case 0:
             return 1
-        // Expandable 효과를 주기 위해서 2개로 반환
         case 1:
             return 1
         case 2:
-            if HightlightCollectionViewCell.isOpened == true {
-                return 1
-            } else {
-                return 1
-            
-            }
+            return 1
         default:
             return 1
         }
@@ -147,43 +143,28 @@ extension ViewController: UICollectionViewDataSource {
 
 }
 extension ViewController: UICollectionViewDelegateFlowLayout {
-    
-    
 //     section의 높이 설정
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-
         
         if indexPath.section == 0 {
-            return CGSize(width: mainCollectionView.frame.width, height: mainCollectionView.frame.height/3)
-        } else if indexPath.section == 1 {
-            if HightlightCollectionViewCell.isOpened == true {
-                print("2")
-            let width = UIScreen.main.bounds.width
-
-            let cellwidth = 375
-            let cellheight = 50
-
-                return CGSize(width: cellwidth, height: cellheight)
-
-        } else {
-            print("3")
-            return CGSize(width: 375, height: 50)
            
-
-        }
+            return CGSize(width: mainCollectionView.frame.width, height: mainCollectionView.frame.height/3)
             
-        }
-        else {
-            if HightlightCollectionViewCell.isOpened == true {
-                print("라라라")
+        } else if indexPath.section == 1 {
+            if HightlightCollectionViewCell.isOpened == false {
+                print("2")
                 return CGSize(width: 375, height: 100)
                 
             } else {
-                print("나난")
+                print("44")
                 return CGSize(width: 375, height: 100)
+                
             }
             
-            
+        }
+        else {
+            print("라라라")
+            return CGSize(width: 375, height: 100)
         }
         
     }
