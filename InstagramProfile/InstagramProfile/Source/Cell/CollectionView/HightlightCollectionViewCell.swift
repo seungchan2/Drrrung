@@ -5,19 +5,21 @@
 //  Created by 김승찬 on 2021/08/18.
 //
 
+
 import UIKit
 
 class HightlightCollectionViewCell: UICollectionViewCell {
     
     //MARK: -Property
     
+    @IBOutlet weak var hightlightHeight: NSLayoutConstraint!
     static let identifier: String = "HightlightCollectionViewCell"
     var imageList : [ImageList] = []
     static var isOpened: Bool = true
-
     
     //MARK: @IBOutlets
     
+    @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var arrowButton: UIButton!
     @IBOutlet weak var hightlightView: UIView!
     @IBOutlet weak var arrowImageView: UIImageView!
@@ -60,8 +62,14 @@ class HightlightCollectionViewCell: UICollectionViewCell {
         UIView.animate(withDuration: 0.5) {
             if HightlightCollectionViewCell.isOpened == true {
                 self.isClose()
+                self.hightlightHeight.constant = 0
+//                self.bottomView.backgroundColor = .clear
+//
+                print("r")
             } else {
                 self.isOpen()
+                self.hightlightHeight.constant = 50
+                print("w")
         
             }
         }
