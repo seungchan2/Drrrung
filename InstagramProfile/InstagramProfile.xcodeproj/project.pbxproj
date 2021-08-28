@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EC3FD25026D40015007E6366 /* Hightlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3FD24F26D40015007E6366 /* Hightlight.swift */; };
+		EC3FD27226D92803007E6366 /* SubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3FD27126D92803007E6366 /* SubViewController.swift */; };
 		ECF24B5926CA99D5000F4354 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF24B5826CA99D5000F4354 /* AppDelegate.swift */; };
 		ECF24B5B26CA99D5000F4354 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF24B5A26CA99D5000F4354 /* SceneDelegate.swift */; };
 		ECF24B5D26CA99D5000F4354 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF24B5C26CA99D5000F4354 /* ViewController.swift */; };
@@ -35,6 +36,7 @@
 
 /* Begin PBXFileReference section */
 		EC3FD24F26D40015007E6366 /* Hightlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hightlight.swift; sourceTree = "<group>"; };
+		EC3FD27126D92803007E6366 /* SubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubViewController.swift; sourceTree = "<group>"; };
 		ECF24B5526CA99D5000F4354 /* InstagramProfile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramProfile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECF24B5826CA99D5000F4354 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECF24B5A26CA99D5000F4354 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				ECF24B5C26CA99D5000F4354 /* ViewController.swift */,
 				ECF24B7C26CAC010000F4354 /* PlusViewController.swift */,
 				ECF24B7A26CAC008000F4354 /* ListViewController.swift */,
+				EC3FD27126D92803007E6366 /* SubViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				ECF24B8B26CADED0000F4354 /* Model.swift in Sources */,
 				ECF24B5B26CA99D5000F4354 /* SceneDelegate.swift in Sources */,
 				ECF24B7F26CAC1F4000F4354 /* Const.swift in Sources */,
+				EC3FD27226D92803007E6366 /* SubViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
